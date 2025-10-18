@@ -1,0 +1,32 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="75" fill="url(#bg4)"/>
+  
+  <!-- Person silhouette -->
+  <g transform="translate(75, 75)">
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="20" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Short hair -->
+    <path d="M -18 -42 Q 0 -45 18 -42 Q 20 -38 18 -30 Q 10 -25 0 -25 Q -10 -25 -18 -30 Q -20 -38 -18 -42 Z" fill="rgba(255,255,255,0.6)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="15" rx="25" ry="35" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Business shirt -->
+    <path d="M -20 -5 Q -25 0 -25 10 L -25 45 Q -25 50 -20 50 L 20 50 Q 25 50 25 45 L 25 10 Q 25 0 20 -5 Z" fill="rgba(255,255,255,0.7)"/>
+    
+    <!-- Collar -->
+    <path d="M -8 -5 L 0 2 L 8 -5 L 12 0 L 8 5 L 0 8 L -8 5 L -12 0 Z" fill="rgba(255,255,255,0.5)"/>
+    
+    <!-- Tie -->
+    <path d="M -3 -2 L 3 -2 L 4 18 L 0 22 L -4 18 Z" fill="rgba(255,255,255,0.4)"/>
+  </g>
+</svg>

@@ -12,6 +12,167 @@
     animation: sparkle 1.5s infinite;
 }
 
+/* Country Dropdown Styles */
+.country-dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.country-dropdown-button {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1f2937;
+    border: 2px solid #374151;
+    border-radius: 8px;
+    color: #f9fafb;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.country-dropdown-button:hover,
+.country-dropdown-button:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+    outline: none;
+}
+
+.country-dropdown-button.active {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.country-dropdown-arrow {
+    transition: transform 0.3s ease;
+    color: #9ca3af;
+}
+
+.country-dropdown-button.active .country-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.country-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1f2937;
+    border: 2px solid #374151;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.country-dropdown-search {
+    width: 100%;
+    padding: 12px 16px;
+    background: #374151;
+    border: none;
+    border-bottom: 1px solid #4b5563;
+    color: #f9fafb;
+    font-size: 14px;
+    outline: none;
+}
+
+.country-dropdown-search::placeholder {
+    color: #9ca3af;
+}
+
+.country-dropdown-search:focus {
+    background: #4b5563;
+}
+
+.country-dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #f9fafb;
+    font-size: 14px;
+    border-bottom: 1px solid #374151;
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.country-dropdown-item:hover {
+    background: #374151;
+}
+
+.country-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.country-dropdown-item.selected {
+    background: #9333ea;
+    color: white;
+}
+
+.country-code {
+    color: #9ca3af;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.country-dropdown-item.selected .country-code {
+    color: #e5e7eb;
+}
+
+.phone-input-group {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+}
+
+.phone-input-group .country-dropdown-container {
+    flex: 0 0 200px;
+}
+
+.phone-input-group input[type="tel"] {
+    flex: 1;
+    padding: 12px 16px;
+    background: #1f2937;
+    border: 2px solid #374151;
+    border-radius: 8px;
+    color: #f9fafb;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.phone-input-group input[type="tel"]:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+    outline: none;
+}
+
+.phone-input-group input[type="tel"]::placeholder {
+    color: #9ca3af;
+}
+
+/* Scrollbar styling for dropdown */
+.country-dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.country-dropdown-menu::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.country-dropdown-menu::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+
+.country-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
 .float {
     animation: float 6s ease-in-out infinite;
 }

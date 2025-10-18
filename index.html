@@ -11,6 +11,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3032047526979670'); fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3032047526979670&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWWSYRKH49"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QWWSYRKH49');
+    </script>
 </head>
 <body class="font-poppins bg-black text-gray-800 overflow-x-hidden">
     <!-- Add this mobile menu button in your header -->
@@ -271,7 +293,7 @@
                     <tr class="bg-gradient-to-r from-purple-600/20 to-purple-800/20">
                         <th class="comparison-header text-left p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30">Feature</th>
                         <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">Typical Web Agencies</th>
-                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Guys</th>
+                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Wizards</th>
                         <th class="comparison-header text-center p-6 text-white font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20 relative">
                             The Free Website Wizards
                         </th>
@@ -798,11 +820,11 @@
                     <!-- Progress Bar -->
                     <div class="mb-4 flex-shrink-0">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs text-gray-200 drop-shadow-lg">Step <span id="currentStep">1</span> of 6</span>
-                            <span class="text-xs text-purple-300 drop-shadow-lg" id="progressPercent">17%</span>
+                            <span class="text-xs text-gray-200 drop-shadow-lg">Step <span id="currentStep">1</span> of 5</span>
+                            <span class="text-xs text-purple-300 drop-shadow-lg" id="progressPercent">20%</span>
                         </div>
                         <div class="w-full bg-gray-700/50 rounded-full h-2">
-                            <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 17%;"></div>
+                            <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 20%;"></div>
                         </div>
                     </div>
                     
@@ -810,64 +832,78 @@
                     <div class="flex-grow flex flex-col justify-center">
                         <!-- Form Steps -->
                         <form id="wizardForm" class="w-full">
-                            <!-- Step 1: Do you already have a website? -->
+                            <!-- Step 1: Website Description -->
                             <div class="step-content" id="step1">
-                                <h3 class="text-2xl font-bold text-white mb-6 text-center">Do you already have a website?</h3>
-                                <p class="text-gray-400 text-center mb-8">(Don't worry, this doesn't affect the odds of your application being chosen)</p>
-                                <div class="space-y-4">
-                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
-                                        <input type="radio" name="hasWebsite" value="yes" class="mr-3 text-purple-500">
-                                        <span class="text-white">Yes, I already have a website</span>
-                                    </label>
-                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
-                                        <input type="radio" name="hasWebsite" value="no" class="mr-3 text-purple-500">
-                                        <span class="text-white">No, I don't have a website yet</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 2: Website Name -->
-                            <div class="step-content hidden" id="step2">
-                                <h3 id="websiteNameTitle" class="text-2xl font-bold text-white mb-6 text-center">What is your dream website name?</h3>
-                                <div class="space-y-4">
-                                    <input type="text" id="websiteName" name="websiteName" placeholder="Enter your website name" class="w-full p-4 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none transition-all duration-200">
-                                </div>
-                            </div>
-                            
-                            <!-- Step 3: Website Description -->
-                            <div class="step-content hidden" id="step3">
                                 <label class="block text-white font-medium mb-3">Describe the website you want to build:</label>
                                 <textarea id="websiteDescription" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Tell us about your business and what kind of website you need..."></textarea>
                             </div>
                             
-                            <!-- Step 4: Name -->
-                            <div class="step-content hidden" id="step4">
-                                <label class="block text-white font-medium mb-3">What is your name?</label>
-                                <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your name">
+                            <!-- Step 2: First Name -->
+                            <div class="step-content hidden" id="step2">
+                                <label class="block text-white font-medium mb-3">What is your first name?</label>
+                                <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your first name">
                             </div>
                             
-                            <!-- Step 5: Email -->
-                            <div class="step-content hidden" id="step5">
+                            <!-- Step 3: Email -->
+                            <div class="step-content hidden" id="step3">
                                 <label class="block text-white font-medium mb-3">What is your email?</label>
                                 <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="your@email.com">
+                                <p class="text-purple-300 text-sm mt-2 italic">*We protect your privacy and will never spam you.🔒*</p>
                                 <div id="emailError" class="text-red-400 text-sm mt-2 hidden">Hm that email doesn't look right</div>
                             </div>
                             
-                            <!-- Step 6: Phone Number -->
-                            <div class="step-content hidden" id="step6">
-                                <label class="block text-white font-medium mb-3">(Optional) What's your phone number?</label>
-                                <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="+1 (555) 123-4567">
+                            <!-- Step 4: Phone Number -->
+                            <div class="step-content hidden" id="step4">
+                                <label class="block text-white font-medium mb-3">What is your phone number?</label>
+                                <div class="flex gap-2">
+                                    <!-- Country Code Dropdown -->
+                                    <div class="relative" style="min-width: 200px;">
+                                        <div class="country-dropdown">
+                                            <button type="button" id="countryDropdownBtn" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200 flex items-center justify-between">
+                                                <span id="selectedCountry">United States (+1)</span>
+                                                <i class="fas fa-chevron-down text-gray-400"></i>
+                                            </button>
+                                            <div id="countryDropdownMenu" class="absolute top-full left-0 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto hidden">
+                                                <div class="p-2">
+                                                    <input type="text" id="countrySearch" placeholder="Search Country" class="w-full px-3 py-2 rounded border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-purple-400">
+                                                </div>
+                                                <div id="countryList" class="max-h-48 overflow-y-auto">
+                                                    <!-- Countries will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Phone Number Input -->
+                                    <div class="flex-1">
+                                        <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="123-456-7890">
+                                    </div>
+                                </div>
                             </div>
                             
-                            <!-- Success Message -->
-                            <div class="step-content hidden text-center" id="successStep">
-                                <div class="text-5xl text-green-400 mb-3 animate-bounce">
-                                    <i class="fas fa-check-circle"></i>
+                            <!-- Step 5: Web Hosting -->
+                            <div class="step-content hidden" id="step5">
+                                <h3 class="text-2xl font-bold text-white mb-6 text-center">Do you have web hosting already?</h3>
+                                <div class="space-y-4">
+                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
+                                        <input type="radio" name="hasWebHosting" value="yes" class="mr-3 text-purple-500">
+                                        <span class="text-white">Yes, I already have web hosting</span>
+                                    </label>
+                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
+                                        <input type="radio" name="hasWebHosting" value="no" class="mr-3 text-purple-500">
+                                        <span class="text-white">No, I don't have web hosting yet</span>
+                                    </label>
                                 </div>
-                                <h4 class="text-xl font-bold text-white mb-2">🎉 Awesome!</h4>
-                                <p class="text-gray-300 text-sm">We'll reach out soon to start building your magical website!</p>
                             </div>
                         </form>
+                        
+                        <!-- Success Message -->
+                        <div class="step-content hidden text-center" id="successStep">
+                            <div class="text-5xl text-green-400 mb-3 animate-bounce">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">🎉 Awesome!</h4>
+                            <p class="text-gray-300 text-sm">We'll reach out soon to start building your magical website!</p>
+                        </div>
                     </div>
                     
                     <!-- Navigation Buttons -->
@@ -1160,7 +1196,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
             <!-- Logo Section -->
             <div class="mb-8 md:mb-0 md:mr-12 transform transition-transform duration-500 hover:scale-105">
-                <img src="Images/logo-transparent.png" alt="The Free Website Guys Logo" class="h-24 md:h-32 w-auto">
+                <img src="Images/logo-transparent.png" alt="The Free Website Wizards Logo" class="h-24 md:h-32 w-auto">
             </div>
             
             <!-- Contact Information -->
@@ -1238,6 +1274,8 @@
                     <li><a href="#why-free" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Why Free?</a></li>
                     <li><a href="examples.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Examples</a></li>
                     <li><a href="additional-services.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Additional Services</a></li>
+                    <li><a href="small-business.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Small Business</a></li>
+                    <li><a href="offer.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Special Offer</a></li>
                 </ul>
             </div>
             
@@ -1455,9 +1493,298 @@
 
               // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
         document.addEventListener('DOMContentLoaded', function() {
+            // Country data with phone codes
+            const countries = [
+                { name: "Afghanistan", code: "+93" },
+                { name: "Albania", code: "+355" },
+                { name: "Algeria", code: "+213" },
+                { name: "American Samoa", code: "+1" },
+                { name: "Andorra", code: "+376" },
+                { name: "Angola", code: "+244" },
+                { name: "Anguilla", code: "+1" },
+                { name: "Antigua and Barbuda", code: "+1" },
+                { name: "Argentina", code: "+54" },
+                { name: "Armenia", code: "+374" },
+                { name: "Aruba", code: "+297" },
+                { name: "Australia", code: "+61" },
+                { name: "Austria", code: "+43" },
+                { name: "Azerbaijan", code: "+994" },
+                { name: "Bahamas", code: "+1" },
+                { name: "Bahrain", code: "+973" },
+                { name: "Bangladesh", code: "+880" },
+                { name: "Barbados", code: "+1" },
+                { name: "Belarus", code: "+375" },
+                { name: "Belgium", code: "+32" },
+                { name: "Belize", code: "+501" },
+                { name: "Benin", code: "+229" },
+                { name: "Bermuda", code: "+1" },
+                { name: "Bhutan", code: "+975" },
+                { name: "Bolivia", code: "+591" },
+                { name: "Bosnia and Herzegovina", code: "+387" },
+                { name: "Botswana", code: "+267" },
+                { name: "Brazil", code: "+55" },
+                { name: "British Indian Ocean Territory", code: "+246" },
+                { name: "British Virgin Islands", code: "+1" },
+                { name: "Brunei", code: "+673" },
+                { name: "Bulgaria", code: "+359" },
+                { name: "Burkina Faso", code: "+226" },
+                { name: "Burundi", code: "+257" },
+                { name: "Cambodia", code: "+855" },
+                { name: "Cameroon", code: "+237" },
+                { name: "Canada", code: "+1" },
+                { name: "Cape Verde", code: "+238" },
+                { name: "Caribbean Netherlands", code: "+599" },
+                { name: "Cayman Islands", code: "+1" },
+                { name: "Central African Republic", code: "+236" },
+                { name: "Chad", code: "+235" },
+                { name: "Chile", code: "+56" },
+                { name: "China", code: "+86" },
+                { name: "Christmas Island", code: "+61" },
+                { name: "Cocos (Keeling) Islands", code: "+61" },
+                { name: "Colombia", code: "+57" },
+                { name: "Comoros", code: "+269" },
+                { name: "Congo (DRC)", code: "+243" },
+                { name: "Congo (Republic)", code: "+242" },
+                { name: "Cook Islands", code: "+682" },
+                { name: "Costa Rica", code: "+506" },
+                { name: "Côte d'Ivoire", code: "+225" },
+                { name: "Croatia", code: "+385" },
+                { name: "Cuba", code: "+53" },
+                { name: "Curaçao", code: "+599" },
+                { name: "Cyprus", code: "+357" },
+                { name: "Czech Republic", code: "+420" },
+                { name: "Denmark", code: "+45" },
+                { name: "Djibouti", code: "+253" },
+                { name: "Dominica", code: "+1" },
+                { name: "Dominican Republic", code: "+1" },
+                { name: "Ecuador", code: "+593" },
+                { name: "Egypt", code: "+20" },
+                { name: "El Salvador", code: "+503" },
+                { name: "Equatorial Guinea", code: "+240" },
+                { name: "Eritrea", code: "+291" },
+                { name: "Estonia", code: "+372" },
+                { name: "Ethiopia", code: "+251" },
+                { name: "Falkland Islands", code: "+500" },
+                { name: "Faroe Islands", code: "+298" },
+                { name: "Fiji", code: "+679" },
+                { name: "Finland", code: "+358" },
+                { name: "France", code: "+33" },
+                { name: "French Guiana", code: "+594" },
+                { name: "French Polynesia", code: "+689" },
+                { name: "Gabon", code: "+241" },
+                { name: "Gambia", code: "+220" },
+                { name: "Georgia", code: "+995" },
+                { name: "Germany", code: "+49" },
+                { name: "Ghana", code: "+233" },
+                { name: "Gibraltar", code: "+350" },
+                { name: "Greece", code: "+30" },
+                { name: "Greenland", code: "+299" },
+                { name: "Grenada", code: "+1" },
+                { name: "Guadeloupe", code: "+590" },
+                { name: "Guam", code: "+1" },
+                { name: "Guatemala", code: "+502" },
+                { name: "Guernsey", code: "+44" },
+                { name: "Guinea", code: "+224" },
+                { name: "Guinea-Bissau", code: "+245" },
+                { name: "Guyana", code: "+592" },
+                { name: "Haiti", code: "+509" },
+                { name: "Honduras", code: "+504" },
+                { name: "Hong Kong", code: "+852" },
+                { name: "Hungary", code: "+36" },
+                { name: "Iceland", code: "+354" },
+                { name: "India", code: "+91" },
+                { name: "Indonesia", code: "+62" },
+                { name: "Iran", code: "+98" },
+                { name: "Iraq", code: "+964" },
+                { name: "Ireland", code: "+353" },
+                { name: "Israel", code: "+972" },
+                { name: "Italy", code: "+39" },
+                { name: "Jamaica", code: "+1-876" },
+                { name: "Japan", code: "+81" },
+                { name: "Jordan", code: "+962" },
+                { name: "Kazakhstan", code: "+7" },
+                { name: "Kenya", code: "+254" },
+                { name: "Kiribati", code: "+686" },
+                { name: "Kuwait", code: "+965" },
+                { name: "Kyrgyzstan", code: "+996" },
+                { name: "Laos", code: "+856" },
+                { name: "Latvia", code: "+371" },
+                { name: "Lebanon", code: "+961" },
+                { name: "Lesotho", code: "+266" },
+                { name: "Liberia", code: "+231" },
+                { name: "Libya", code: "+218" },
+                { name: "Liechtenstein", code: "+423" },
+                { name: "Lithuania", code: "+370" },
+                { name: "Luxembourg", code: "+352" },
+                { name: "Macau", code: "+853" },
+                { name: "Macedonia", code: "+389" },
+                { name: "Madagascar", code: "+261" },
+                { name: "Malawi", code: "+265" },
+                { name: "Malaysia", code: "+60" },
+                { name: "Maldives", code: "+960" },
+                { name: "Mali", code: "+223" },
+                { name: "Malta", code: "+356" },
+                { name: "Marshall Islands", code: "+692" },
+                { name: "Mauritania", code: "+222" },
+                { name: "Mauritius", code: "+230" },
+                { name: "Mexico", code: "+52" },
+                { name: "Micronesia", code: "+691" },
+                { name: "Moldova", code: "+373" },
+                { name: "Monaco", code: "+377" },
+                { name: "Mongolia", code: "+976" },
+                { name: "Montenegro", code: "+382" },
+                { name: "Morocco", code: "+212" },
+                { name: "Mozambique", code: "+258" },
+                { name: "Myanmar", code: "+95" },
+                { name: "Namibia", code: "+264" },
+                { name: "Nauru", code: "+674" },
+                { name: "Nepal", code: "+977" },
+                { name: "Netherlands", code: "+31" },
+                { name: "New Zealand", code: "+64" },
+                { name: "Nicaragua", code: "+505" },
+                { name: "Niger", code: "+227" },
+                { name: "Nigeria", code: "+234" },
+                { name: "North Korea", code: "+850" },
+                { name: "Norway", code: "+47" },
+                { name: "Oman", code: "+968" },
+                { name: "Pakistan", code: "+92" },
+                { name: "Palau", code: "+680" },
+                { name: "Palestine", code: "+970" },
+                { name: "Panama", code: "+507" },
+                { name: "Papua New Guinea", code: "+675" },
+                { name: "Paraguay", code: "+595" },
+                { name: "Peru", code: "+51" },
+                { name: "Philippines", code: "+63" },
+                { name: "Poland", code: "+48" },
+                { name: "Portugal", code: "+351" },
+                { name: "Puerto Rico", code: "+1-787" },
+                { name: "Qatar", code: "+974" },
+                { name: "Romania", code: "+40" },
+                { name: "Russia", code: "+7" },
+                { name: "Rwanda", code: "+250" },
+                { name: "Saint Kitts and Nevis", code: "+1-869" },
+                { name: "Saint Lucia", code: "+1-758" },
+                { name: "Saint Vincent and the Grenadines", code: "+1-784" },
+                { name: "Samoa", code: "+685" },
+                { name: "San Marino", code: "+378" },
+                { name: "Sao Tome and Principe", code: "+239" },
+                { name: "Saudi Arabia", code: "+966" },
+                { name: "Senegal", code: "+221" },
+                { name: "Serbia", code: "+381" },
+                { name: "Seychelles", code: "+248" },
+                { name: "Sierra Leone", code: "+232" },
+                { name: "Singapore", code: "+65" },
+                { name: "Slovakia", code: "+421" },
+                { name: "Slovenia", code: "+386" },
+                { name: "Solomon Islands", code: "+677" },
+                { name: "Somalia", code: "+252" },
+                { name: "South Africa", code: "+27" },
+                { name: "South Korea", code: "+82" },
+                { name: "South Sudan", code: "+211" },
+                { name: "Spain", code: "+34" },
+                { name: "Sri Lanka", code: "+94" },
+                { name: "Sudan", code: "+249" },
+                { name: "Suriname", code: "+597" },
+                { name: "Swaziland", code: "+268" },
+                { name: "Sweden", code: "+46" },
+                { name: "Switzerland", code: "+41" },
+                { name: "Syria", code: "+963" },
+                { name: "Taiwan", code: "+886" },
+                { name: "Tajikistan", code: "+992" },
+                { name: "Tanzania", code: "+255" },
+                { name: "Thailand", code: "+66" },
+                { name: "Togo", code: "+228" },
+                { name: "Tonga", code: "+676" },
+                { name: "Trinidad and Tobago", code: "+1-868" },
+                { name: "Tunisia", code: "+216" },
+                { name: "Turkey", code: "+90" },
+                { name: "Turkmenistan", code: "+993" },
+                { name: "Tuvalu", code: "+688" },
+                { name: "Uganda", code: "+256" },
+                { name: "Ukraine", code: "+380" },
+                { name: "United Arab Emirates", code: "+971" },
+                { name: "United Kingdom", code: "+44" },
+                { name: "United States", code: "+1" },
+                { name: "Uruguay", code: "+598" },
+                { name: "Uzbekistan", code: "+998" },
+                { name: "Vanuatu", code: "+678" },
+                { name: "Vatican City", code: "+39-06" },
+                { name: "Venezuela", code: "+58" },
+                { name: "Vietnam", code: "+84" },
+                { name: "Virgin Islands", code: "+1-340" },
+                { name: "Yemen", code: "+967" },
+                { name: "Zambia", code: "+260" },
+                { name: "Zimbabwe", code: "+263" }
+            ];
+
+            let selectedCountry = countries.find(c => c.name === "United States") || countries[0];
+
+            // Country dropdown functionality
+            function initializeCountryDropdown() {
+                const dropdownBtn = document.getElementById('countryDropdownBtn');
+                const dropdownMenu = document.getElementById('countryDropdownMenu');
+                const countryList = document.getElementById('countryList');
+                const countrySearch = document.getElementById('countrySearch');
+                const selectedCountrySpan = document.getElementById('selectedCountry');
+
+                if (!dropdownBtn || !dropdownMenu || !countryList || !countrySearch) return;
+
+                // Populate country list
+                function populateCountryList(filteredCountries = countries) {
+                    countryList.innerHTML = '';
+                    filteredCountries.forEach(country => {
+                        const countryItem = document.createElement('div');
+                        countryItem.className = 'px-4 py-2 hover:bg-gray-700 cursor-pointer text-white border-b border-gray-600 last:border-b-0';
+                        countryItem.innerHTML = `${country.name} (${country.code})`;
+                        countryItem.addEventListener('click', () => {
+                            selectedCountry = country;
+                            selectedCountrySpan.textContent = `${country.name} (${country.code})`;
+                            dropdownMenu.classList.add('hidden');
+                            countrySearch.value = '';
+                            populateCountryList(); // Reset list
+                        });
+                        countryList.appendChild(countryItem);
+                    });
+                }
+
+                // Initialize dropdown
+                populateCountryList();
+
+                // Toggle dropdown
+                dropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('hidden');
+                    if (!dropdownMenu.classList.contains('hidden')) {
+                        countrySearch.focus();
+                    }
+                });
+
+                // Search functionality
+                countrySearch.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filteredCountries = countries.filter(country => 
+                        country.name.toLowerCase().includes(searchTerm) || 
+                        country.code.includes(searchTerm)
+                    );
+                    populateCountryList(filteredCountries);
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                });
+
+                // Prevent dropdown from closing when clicking inside the menu
+                dropdownMenu.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+
             // Modal functionality
             let currentStepIndex = 1;
-            const totalSteps = 6;
+            const totalSteps = 5;
             
             // Modal elements
             const modal = document.getElementById('wizardModal');
@@ -1502,6 +1829,9 @@
                 // Show the modal
                 modal.style.display = 'flex';
                 modal.classList.remove('hidden');
+                
+                // Initialize country dropdown
+                initializeCountryDropdown();
                 
                 // Start transitions after a brief moment
                 setTimeout(() => {
@@ -1620,42 +1950,13 @@
                 updateButtons();
             }
             
-            // Add radio button change listeners for immediate title update
-            document.querySelectorAll('input[name="hasWebsite"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    const websiteNameTitle = document.getElementById('websiteNameTitle');
-                    if (this.value === 'yes') {
-                        websiteNameTitle.textContent = 'What is your current website name?';
-                    } else {
-                        websiteNameTitle.textContent = 'What is your dream website name?';
-                    }
-                });
-            });
-
             // Next button functionality
             if (nextBtn) {
                 nextBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     
-                    // Validation for step 1 (website selection)
-                    if (currentStepIndex === 1) {
-                        const hasWebsiteRadio = document.querySelector('input[name="hasWebsite"]:checked');
-                        if (!hasWebsiteRadio) {
-                            // Show error or highlight that selection is required
-                            return;
-                        }
-                        
-                        // Update step 2 title based on selection
-                        const websiteNameTitle = document.getElementById('websiteNameTitle');
-                        if (hasWebsiteRadio.value === 'yes') {
-                            websiteNameTitle.textContent = 'What is your current website name?';
-                        } else {
-                            websiteNameTitle.textContent = 'What is your dream website name?';
-                        }
-                    }
-                    
-                    // Email validation for step 5
-                    if (currentStepIndex === 5) {
+                    // Email validation for step 3
+                    if (currentStepIndex === 3) {
                         const emailInput = document.getElementById('email');
                         const emailError = document.getElementById('emailError');
                         const email = emailInput.value.trim();
@@ -1667,6 +1968,15 @@
                         } else {
                             emailInput.style.borderColor = '#9333ea';
                             emailError.classList.add('hidden');
+                        }
+                    }
+                    
+                    // Validation for step 5 (web hosting selection)
+                    if (currentStepIndex === 5) {
+                        const hasWebHostingRadio = document.querySelector('input[name="hasWebHosting"]:checked');
+                        if (!hasWebHostingRadio) {
+                            // Show error or highlight that selection is required
+                            return;
                         }
                     }
                     
@@ -1723,45 +2033,118 @@
                 if (nextBtn) nextBtn.disabled = true; // Disable submit button during processing
                 if (backBtn) backBtn.disabled = true; // Disable back button too
 
-                const hasWebsite = document.querySelector('input[name="hasWebsite"]:checked')?.value;
-                const websiteName = document.getElementById('websiteName').value;
+                const hasWebHosting = document.querySelector('input[name="hasWebHosting"]:checked')?.value;
                 const websiteDescription = document.getElementById('websiteDescription').value;
                 const firstName = document.getElementById('firstName').value;
                 const email = document.getElementById('email').value;
                 const phoneNumber = document.getElementById('phoneNumber').value;
 
+                // Validate required fields
+                if (!websiteDescription || !firstName || !email || !hasWebHosting) {
+                    showSubmissionError('Please fill in all required fields before submitting.');
+                    return;
+                }
+
                 const formData = {
-                    hasWebsite: hasWebsite,
-                    websiteName: websiteName,
+                    hasWebHosting: hasWebHosting,
                     websiteDescription: websiteDescription,
                     firstName: firstName,
                     email: email,
-                    phoneNumber: phoneNumber
+                    phoneNumber: phoneNumber,
+                    countryCode: selectedCountry.code,
+                    countryName: selectedCountry.name,
+                    timestamp: new Date().toISOString(),
+                    source: 'tfww-wizard'
                 };
+
+                console.log('Submitting form data:', formData);
+
+                // Add timeout to the fetch request
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
 
                 fetch("https://www.leadneedle.com/submit-wizard", {
                     method: 'POST',
                     mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Accept': 'application/json',
                     },
                     body: JSON.stringify(formData),
+                    signal: controller.signal
                 })
                 .then(response => {
+                    clearTimeout(timeoutId);
+                    console.log('Response status:', response.status);
+                    console.log('Response headers:', response.headers);
+                    
                     if (response.ok) {
-                        return response.json(); // Or response.text() if not expecting JSON back
+                        // Try to parse as JSON first, fallback to text
+                        const contentType = response.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            return response.json();
+                        } else {
+                            return response.text();
+                        }
+                    } else {
+                        // Enhanced error handling with status codes
+                        return response.text().then(text => {
+                            let errorMessage = `Server error (${response.status}): `;
+                            switch(response.status) {
+                                case 400:
+                                    errorMessage += 'Invalid form data. Please check your entries.';
+                                    break;
+                                case 401:
+                                    errorMessage += 'Authentication required.';
+                                    break;
+                                case 403:
+                                    errorMessage += 'Access forbidden.';
+                                    break;
+                                case 404:
+                                    errorMessage += 'Submission endpoint not found.';
+                                    break;
+                                case 429:
+                                    errorMessage += 'Too many requests. Please wait and try again.';
+                                    break;
+                                case 500:
+                                    errorMessage += 'Internal server error. Please try again later.';
+                                    break;
+                                case 502:
+                                case 503:
+                                case 504:
+                                    errorMessage += 'Server temporarily unavailable. Please try again later.';
+                                    break;
+                                default:
+                                    errorMessage += text || 'Unknown server error.';
+                            }
+                            throw new Error(errorMessage);
+                        });
                     }
-                    // If response is not ok, throw an error to be caught by .catch()
-                    // You might want to parse error response from backend if available
-                    return response.text().then(text => { throw new Error(text || 'Network response was not ok') });
                 })
                 .then(data => {
                     console.log('Submission successful:', data);
                     handleSuccessfulSubmission();
                 })
                 .catch(error => {
+                    clearTimeout(timeoutId);
                     console.error('Submission error:', error);
-                    showSubmissionError('There was a problem submitting your application. Please try again later.');
+                    
+                    let errorMessage = 'There was a problem submitting your application. ';
+                    
+                    if (error.name === 'AbortError') {
+                        errorMessage += 'Request timed out. Please check your internet connection and try again.';
+                    } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                        errorMessage += 'Network connection error. Please check your internet connection and try again.';
+                    } else if (error.message.includes('CORS')) {
+                        errorMessage += 'Cross-origin request blocked. Please contact support.';
+                    } else if (error.message.startsWith('Server error')) {
+                        errorMessage = error.message;
+                    } else {
+                        errorMessage += 'Please try again later or contact support if the problem persists.';
+                    }
+                    
+                    showSubmissionError(errorMessage);
+                    
                     // Re-enable buttons only on error, success will close modal
                     if (nextBtn) nextBtn.disabled = false;
                     if (backBtn) backBtn.disabled = false;
