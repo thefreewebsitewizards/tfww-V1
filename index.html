@@ -2063,14 +2063,24 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
 
-                fetch("https://www.leadneedle.com/submit-wizard", {
+                // Create FormData for Apps Script submission
+                const submitData = new FormData();
+                submitData.append('firstName', formData.firstName);
+                submitData.append('email', formData.email);
+                submitData.append('phoneNumber', formData.phoneNumber);
+                submitData.append('countryCode', formData.countryCode);
+                submitData.append('countryName', formData.countryName);
+                submitData.append('hasWebHosting', formData.hasWebHosting);
+                submitData.append('websiteDescription', formData.websiteDescription);
+                submitData.append('source', formData.source);
+                submitData.append('timestamp', formData.timestamp);
+                // Add shared secret for backend validation (never expose this in client-side JS)
+                submitData.append('secret', 'tfww-secure-2024');
+
+                fetch("https://script.google.com/macros/s/AKfycbxCC2LBCk0US9JUSiztbjPlx5OxEVHvclH3NSI_dN-ex8NES662Ya5foLPKBq543i4P/exec", {
                     method: 'POST',
                     mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
+                    body: submitData,
                     signal: controller.signal
                 })
                 .then(response => {
