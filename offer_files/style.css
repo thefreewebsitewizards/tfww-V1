@@ -45,6 +45,12 @@ Template: astra
 .hero-rating img{vertical-align:-1px}
 .hero-rating .linesep{padding:0 5px;opacity:0.5}
 .hero-rating .ratestar img{margin-right:5px}
+.hero-rating .ratestar{display:inline-flex;align-items:center}
+
+@media screen and (max-width: 767px){
+  .hero-rating .elementor-widget-container{ text-align:center }
+  .hero-rating .ratestar{ justify-content:center }
+}
 .herospan{color:var( --e-global-color-primary);background:url(images/line1.png) left 90% no-repeat;background-size:contain}
 .homehero,
 .section-afterbg1,
