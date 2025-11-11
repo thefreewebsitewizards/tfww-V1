@@ -570,7 +570,7 @@ const SUBMIT_ENDPOINT = 'https://thefreewebsitewizards.app.n8n.cloud/webhook/lea
       setTimeout(() => closeModal(), 3000);
     }
 
-    function submitForm() {
+    async function submitForm() {
       formErrorDisplay.style.display = 'none';
       if (nextBtn) nextBtn.disabled = true;
       if (backBtn) backBtn.disabled = true;
@@ -599,8 +599,6 @@ const SUBMIT_ENDPOINT = 'https://thefreewebsitewizards.app.n8n.cloud/webhook/lea
       };
 
       // Collect tracking/meta fields
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000);
       const urlParams = new URLSearchParams(window.location.search);
       const cookies = document.cookie.split(';').map(c => c.trim());
       const fbpCookie = cookies.find(c => c.startsWith('_fbp='));
@@ -621,67 +619,39 @@ const SUBMIT_ENDPOINT = 'https://thefreewebsitewizards.app.n8n.cloud/webhook/lea
         ua: navigator.userAgent
       };
 
-      fetch(SUBMIT_ENDPOINT, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-intake-secret': 'tfww-lead-intake-secret'
-        },
-        body: JSON.stringify(body),
-        signal: controller.signal
-      })
-        .then(response => {
-          clearTimeout(timeoutId);
-          if (response.ok) {
-            const contentType = response.headers.get('content-type');
-            return contentType && contentType.includes('application/json') ? response.json() : response.text();
+      try {
+        const fd = new FormData();
+        Object.entries(body).forEach(([k, v]) => fd.append(k, v == null ? '' : v));
+
+        const res = await fetch(SUBMIT_ENDPOINT, {
+          method: 'POST',
+          body: fd
+        });
+
+        if (!res.ok) throw new Error('Submission failed');
+
+        console.log('Submission successful');
+        try {
+          if (window.onApplyFormSuccess) {
+            window.onApplyFormSuccess({ name: firstName, email, phone: phoneNumber });
           } else {
-            return response.text().then(text => {
-              let errorMessage = `Server error (${response.status}): `;
-              switch (response.status) {
-                case 400: errorMessage += 'Invalid form data. Please check your entries.'; break;
-                case 401: errorMessage += 'Authentication required.'; break;
-                case 403: errorMessage += 'Access forbidden.'; break;
-                case 404: errorMessage += 'Submission endpoint not found.'; break;
-                case 429: errorMessage += 'Too many requests. Please wait and try again.'; break;
-                case 500: errorMessage += 'Internal server error. Please try again later.'; break;
-                case 502:
-                case 503:
-                case 504: errorMessage += 'Server temporarily unavailable. Please try again later.'; break;
-                default: errorMessage += text || 'Unknown server error.';
-              }
-              throw new Error(errorMessage);
-            });
-          }
-        })
-        .then(data => {
-          console.log('Submission successful:', data);
-          try {
-            if (window.onApplyFormSuccess) {
-              window.onApplyFormSuccess({ name: firstName, email, phone: phoneNumber });
-            } else {
-              // Fallback to original success screen if global handler not present
-              handleSuccessfulSubmission();
-            }
-          } catch (e) {
-            console.error('onApplyFormSuccess failed, showing default success:', e);
+            // Fallback to original success screen if global handler not present
             handleSuccessfulSubmission();
           }
-        })
-        .catch(error => {
-          clearTimeout(timeoutId);
-          console.error('Submission error:', error);
-          let message = 'There was a problem submitting your application. ';
-          if (error.name === 'AbortError') message += 'Request timed out. Please check your internet connection and try again.';
-          else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) message += 'Network connection error. Please check your internet connection and try again.';
-          else if (error.message.includes('CORS')) message += 'Cross-origin request blocked. Please contact support.';
-          else if (error.message.startsWith('Server error')) message = error.message;
-          else message += 'Please try again later or contact support if the problem persists.';
-          showSubmissionError(message);
-          if (nextBtn) nextBtn.disabled = false;
-          if (backBtn) backBtn.disabled = false;
-        });
+        } catch (e) {
+          console.error('onApplyFormSuccess failed, showing default success:', e);
+          handleSuccessfulSubmission();
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        let message = 'There was a problem submitting your application. ';
+        if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) message += 'Network connection error. Please check your internet connection and try again.';
+        else if (error.message.includes('CORS')) message += 'Cross-origin request blocked. Please contact support.';
+        else message += 'Please try again later or contact support if the problem persists.';
+        showSubmissionError(message);
+        if (nextBtn) nextBtn.disabled = false;
+        if (backBtn) backBtn.disabled = false;
+      }
     }
 
     document.addEventListener('keydown', (e) => {
