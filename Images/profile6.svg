@@ -1,0 +1,32 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="75" fill="url(#bg6)"/>
+  
+  <!-- Person silhouette -->
+  <g transform="translate(75, 75)">
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="20" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Professional bob hairstyle -->
+    <path d="M -21 -41 Q 0 -46 21 -41 Q 23 -35 22 -20 Q 18 -15 10 -17 Q 0 -18 -10 -17 Q -18 -15 -22 -20 Q -23 -35 -21 -41 Z" fill="rgba(255,255,255,0.6)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="15" rx="25" ry="35" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Professional suit -->
+    <path d="M -22 -7 Q -27 -2 -27 8 L -27 43 Q -27 48 -22 48 L 22 48 Q 27 48 27 43 L 27 8 Q 27 -2 22 -7 Z" fill="rgba(255,255,255,0.7)"/>
+    
+    <!-- Blouse with collar -->
+    <path d="M -12 -7 L -6 -1 L 0 -3 L 6 -1 L 12 -7 L 8 2 L 0 5 L -8 2 Z" fill="rgba(255,255,255,0.5)"/>
+    
+    <!-- Professional pin -->
+    <circle cx="8" cy="2" r="2" fill="rgba(255,255,255,0.4)"/>
+  </g>
+</svg>

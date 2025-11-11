@@ -1,0 +1,33 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="75" fill="url(#bg7)"/>
+  
+  <!-- Person silhouette -->
+  <g transform="translate(75, 75)">
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="20" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Executive hairstyle -->
+    <path d="M -18 -43 Q -8 -46 8 -45 Q 18 -43 19 -37 Q 18 -30 15 -26 Q 8 -22 0 -22 Q -8 -22 -15 -26 Q -18 -30 -19 -37 Q -18 -43 -18 -43 Z" fill="rgba(255,255,255,0.6)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="15" rx="25" ry="35" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Executive suit -->
+    <path d="M -23 -8 Q -28 -3 -28 7 L -28 42 Q -28 47 -23 47 L 23 47 Q 28 47 28 42 L 28 7 Q 28 -3 23 -8 Z" fill="rgba(255,255,255,0.7)"/>
+    
+    <!-- Dress shirt and tie -->
+    <path d="M -10 -8 L 0 -2 L 10 -8 L 12 -3 L 8 2 L 0 5 L -8 2 L -12 -3 Z" fill="rgba(255,255,255,0.5)"/>
+    <path d="M -4 -2 L 4 -2 L 5 20 L 0 25 L -5 20 Z" fill="rgba(255,255,255,0.4)"/>
+    
+    <!-- Pocket square -->
+    <rect x="12" y="5" width="6" height="3" fill="rgba(255,255,255,0.3)"/>
+  </g>
+</svg>

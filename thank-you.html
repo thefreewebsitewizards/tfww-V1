@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You</title>
+    <link rel="preconnect" href="https://assets.calendly.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3032047526979670'); fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3032047526979670&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWWSYRKH49"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-QWWSYRKH49');
+    </script>
+    <style>
+      body { margin: 0; background:#000000; color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+      .container { max-width: 720px; margin: 0 auto; padding: 16px; }
+      .card { background: rgba(10,10,10,0.85); border: 1px solid #2a2a2e; border-radius: 12px; padding: 16px; }
+      .h1 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+      .p { font-size: 14px; color: #cfcfd6; margin: 0 0 12px; }
+      .mb-12 { margin-bottom: 12px; }
+      .mb-16 { margin-bottom: 16px; }
+      .center { text-align: center; }
+      .input { width: 100%; padding: 10px 12px; border-radius: 8px; background: #0b0b0c; color: #fff; border: 1px solid #2a2a2e; }
+      .row { display: flex; gap: 8px; flex-wrap: wrap; }
+      .btn { background: #9333ea; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+      .btn-alt { background: #2a2a2e; }
+      .small { font-size: 12px; color: #9ea0a8; }
+      .hidden { display: none; }
+      .inline-widget { min-width: 100%; min-height: 720px; height: 800px; border-radius: 16px; overflow: hidden; }
+      @media (min-width: 640px) { .inline-widget { height: 860px; } }
+      .calendly-inline-widget { width: 100%; }
+      /* Particles and stars for background */
+      .star { position: absolute; background: rgba(255,255,255,0.85); border-radius: 50%; pointer-events: none; animation-name: twinkle; }
+    </style>
+  </head>
+  <body class="font-poppins bg-black text-gray-200 overflow-x-hidden">
+    <!-- Floating Stars Background -->
+    <div id="stars-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    <!-- Floating Particles Background -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Booking Prompt Modal -->
+    <div id="bookingPrompt" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden">
+      <div class="w-full max-w-lg mx-4 bg-black border border-purple-500/40 rounded-2xl p-6 md:p-8 shadow-2xl">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white text-center mb-2">Almost finished!</h2>
+        <p class="text-base md:text-lg text-gray-200 text-center mb-6">To complete your application, Book a short Free Website Strategy Call</p>
+        <div class="flex items-center justify-center">
+          <button id="continueToBooking" class="px-5 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold shadow-lg hover:shadow-xl transition">Continue to Booking</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-6 py-12">
+      <!-- Scheduler Section -->
+      <section id="scheduler" class="bg-black magic-bg nebula-bg text-white rounded-2xl border border-purple-500/30 shadow-2xl p-6 md:p-10">
+        <div class="center mb-10">
+          <div class="mb-2">
+            <span class="inline-block text-xs md:text-sm font-semibold tracking-wide uppercase text-purple-300 bg-purple-600/10 border border-purple-500/30 rounded-full px-3 py-1">Almost finished!</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">To complete your application, <span class="gradient-text">Book a Free Website Strategy Call</span></h1>
+          <p class="p max-w-2xl mx-auto">In just 15 minutes, we’ll map your website plan, answer questions, and get timelines moving right away.</p>
+        </div>
+
+        <!-- Value bullets -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
+            <i class="fas fa-rocket text-purple-400 mt-1"></i>
+            <div>
+              <p class="text-white font-semibold">Quick Launch Plan</p>
+              <p class="text-sm text-gray-300">Concrete next steps to get your free site live fast.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
+            <i class="fas fa-palette text-purple-400 mt-1"></i>
+            <div>
+              <p class="text-white font-semibold">Design Ideas</p>
+              <p class="text-sm text-gray-300">Themes and layouts tailored for your business.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
+            <i class="fas fa-chart-line text-purple-400 mt-1"></i>
+            <div>
+              <p class="text-white font-semibold">Growth Checklist</p>
+              <p class="text-sm text-gray-300">Simple actions to start attracting and converting visitors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendly embed -->
+        <div class="relative rounded-2xl overflow-hidden border border-purple-500/40 shadow-2xl">
+          <div id="calendlyInline" class="calendly-inline-widget inline-widget"
+               data-url="https://calendly.com/dylan-thefreewebsitewizards/freewebsitestrategycall?hide_event_type_details=1&background_color=000000&text_color=ffffff&primary_color=9333ea"></div>
+        </div>
+
+        <p class="small center mt-6">If you don’t see the calendar, please check your connection.</p>
+      </section>
+
+      <!-- Referral Section -->
+      <section id="referral" class="hidden bg-black magic-bg nebula-bg text-white rounded-2xl border border-purple-500/30 shadow-2xl p-6 md:p-10">
+        <div class="center mb-8">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Thank you — You’re scheduled!</h2>
+          <p class="p max-w-2xl mx-auto">You can also earn rewards by referring friends and businesses.</p>
+        </div>
+
+        <!-- Reward highlight -->
+        <div class="bg-black/50 border border-purple-500/30 rounded-xl p-6 mb-8">
+          <div class="flex items-center gap-4 justify-center">
+            <i class="fas fa-gift text-purple-400 text-2xl"></i>
+            <div>
+              <p class="text-xl md:text-2xl font-bold">Earn $50 per qualified referral</p>
+              <p class="text-sm text-gray-300">Paid when their application is accepted and we build their site.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-black/40 border border-purple-500/20 rounded-lg p-5">
+            <p class="text-white font-semibold mb-2"><i class="fas fa-user-plus text-purple-400 mr-2"></i>Tell them to apply</p>
+            <p class="text-sm text-gray-300">Ask them to apply on our site for a free website.</p>
+          </div>
+          <div class="bg-black/40 border border-purple-500/20 rounded-lg p-5">
+            <p class="text-white font-semibold mb-2"><i class="fas fa-file-signature text-purple-400 mr-2"></i>They get approved</p>
+            <p class="text-sm text-gray-300">We review their application and schedule a build.</p>
+          </div>
+          <div class="bg-black/40 border border-purple-500/20 rounded-lg p-5">
+            <p class="text-white font-semibold mb-2"><i class="fas fa-hand-holding-usd text-purple-400 mr-2"></i>You get $50</p>
+            <p class="text-sm text-gray-300">Reward is issued two months after their website is built.</p>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="bg-black/50 border border-purple-500/30 rounded-xl p-6">
+          <p class="text-white font-semibold mb-3">Tips to get credit</p>
+          <ul class="list-disc list-inside text-sm text-gray-300 space-y-2">
+            <li>Ask them to mention your name on their application.</li>
+            <li>Share why you booked: quick plan, design ideas, and real launch steps.</li>
+            <li>No need for a special link — just have them apply directly.</li>
+          </ul>
+        </div>
+
+        <p class="small mt-6">A percentage of clients return for paid projects later, which is why we offer this reward. See Terms and Conditions.</p>
+      </section>
+    </main>
+
+    <!-- Footer mirrored from index.html for stylistic consistency -->
+    <footer class="py-16 bg-gradient-to-b from-purple-900 to-purple-950 text-white relative overflow-hidden transition-all duration-700 ease-in-out">
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-800/20 via-transparent to-purple-800/20 opacity-0 transition-opacity duration-1000 hover:opacity-100"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-purple-950/50 via-transparent to-purple-900/30 transition-opacity duration-500"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+            <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">NAVIGATION</h3>
+            <ul class="space-y-3">
+              <li><a href="index.html" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Home</a></li>
+              <li><a href="examples.html" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Examples</a></li>
+              <li><a href="additional-services.html" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Additional Services</a></li>
+              <li><a href="small-business.html" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Small Business</a></li>
+              <li><a href="offer.html" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Special Offer</a></li>
+            </ul>
+          </div>
+          <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+            <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">EXPLORE</h3>
+            <ul class="space-y-3">
+              <li><a href="index.html#testimonials" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Testimonials</a></li>
+              <li><a href="index.html#guide" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Step by Step Guide</a></li>
+              <li><a href="index.html#benefits" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Website Benefits</a></li>
+              <li><a href="index.html#why-free" class="text-gray-300 hover:text-white transition-all duration-300 inline-block">Why Free?</a></li>
+            </ul>
+          </div>
+          <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+            <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">SOCIAL MEDIA</h3>
+            <ul class="space-y-3">
+              <li><a href="https://www.facebook.com/profile.php?id=61577287178455" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center"><i class="fab fa-facebook mr-3"></i>Facebook</a></li>
+              <li><a href="https://www.tiktok.com/@thefreewebsitewizards" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center"><i class="fab fa-tiktok mr-3"></i>Tiktok</a></li>
+              <li><a href="https://www.instagram.com/thefreewebsitewizards" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center"><i class="fab fa-instagram mr-3"></i>Instagram</a></li>
+              <li><a href="https://wa.me/17066641792" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center"><i class="fab fa-whatsapp mr-3"></i>Whatsapp</a></li>
+            </ul>
+          </div>
+          <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+            <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">CONTACT</h3>
+            <ul class="space-y-3">
+              <li class="text-gray-300"><i class="fas fa-envelope mr-3"></i>dylan@thefreewebsitewizards.com</li>
+              <li class="text-gray-300"><i class="fas fa-phone mr-3"></i>+1 (706)-664-1792</li>
+              <li class="text-gray-300"><i class="fas fa-clock mr-3"></i>24/7 Available</li>
+              <li><a href="index.html#apply" class="text-purple-400 hover:text-purple-300 inline-block"><i class="fas fa-magic mr-3"></i>Get Started Today</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-purple-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center">
+              <span class="text-gray-300">© 2025 </span>
+              <span class="text-blue-400 font-semibold mx-1">THE FREE WEBSITE WIZARDS</span>
+              <span class="text-gray-300">©. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6">
+              <a href="privacy-policy.html" class="text-gray-300 hover:text-white">Privacy Policy</a>
+              <a href="terms-of-service.html" class="text-gray-300 hover:text-white">Terms and Conditions</a>
+              <div class="flex items-center text-gray-300">
+                <i class="fas fa-globe mr-2"></i>
+                <span>English (United States)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Fire a page view event if you use dataLayer
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'ThankYouLoaded' });
+      } catch (_) {}
+
+      // Load Calendly widget script
+      (function ensureCalendly() {
+        if (!document.getElementById('calendly-widget-js')) {
+          const s = document.createElement('script');
+          s.id = 'calendly-widget-js';
+          s.src = 'https://assets.calendly.com/assets/external/widget.js';
+          s.async = true;
+          document.head.appendChild(s);
+        }
+      })();
+
+      // Read lead details from query params (not shown, used only for tracking if needed)
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name') || '';
+      const email = params.get('email') || '';
+      const phone = params.get('phone') || '';
+
+      // Listen for Calendly booking event and swap to referral section
+      window.addEventListener('message', (e) => {
+        try {
+          if (!e || !e.data || !e.data.event) return;
+          if (String(e.data.event) === 'calendly.event_scheduled') {
+            try {
+              window.dataLayer.push({ event: 'meeting_scheduled' });
+              window.dataLayer.push({ event: 'MeetingScheduled' });
+              // Meta Pixel: track appointment scheduling
+              if (window.fbq) {
+                try { fbq('track', 'Schedule', { content_name: 'Free Website Strategy Call' }); } catch (_) {}
+              }
+              // Google Analytics: custom event
+              if (typeof gtag === 'function') {
+                try { gtag('event', 'meeting_scheduled', { event_category: 'Calendly', event_label: 'Free Website Strategy Call' }); } catch (_) {}
+              }
+            } catch (_) {}
+            const schedulerEl = document.getElementById('scheduler');
+            const referralEl = document.getElementById('referral');
+            if (schedulerEl) schedulerEl.classList.add('hidden');
+            if (referralEl) {
+              referralEl.classList.remove('hidden');
+              // Scroll to referral section so page is not at the top
+              setTimeout(() => {
+                try { referralEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(_){}
+              }, 50);
+            }
+          }
+        } catch (err) {
+          console.warn('Calendly listener error:', err);
+        }
+      });
+
+      // Particles from index.html
+      function createStars() {
+        const starsContainer = document.getElementById('stars-container');
+        const numberOfStars = 50;
+        for (let i = 0; i < numberOfStars; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.width = Math.random() * 3 + 1 + 'px';
+          star.style.height = star.style.width;
+          star.style.animationDelay = Math.random() * 2 + 's';
+          star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          starsContainer.appendChild(star);
+        }
+      }
+
+      function createParticles() {
+        const particlesContainer = document.getElementById('particles-container');
+        setInterval(() => {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.width = Math.random() * 4 + 2 + 'px';
+          particle.style.height = particle.style.width;
+          particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+          particle.style.opacity = Math.random() * 0.5 + 0.3;
+          particlesContainer.appendChild(particle);
+          setTimeout(() => {
+            if (particle.parentNode) particle.parentNode.removeChild(particle);
+          }, 20000);
+        }, 350);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        createStars();
+        createParticles();
+        // Show booking prompt modal on load and wire actions
+        const prompt = document.getElementById('bookingPrompt');
+        const continueBtn = document.getElementById('continueToBooking');
+        if (prompt) {
+          prompt.classList.remove('hidden');
+          setTimeout(() => { try { continueBtn && continueBtn.focus(); } catch(_){} }, 100);
+        }
+        const scrollToScheduler = () => {
+          try { prompt && prompt.classList.add('hidden'); } catch(_){}
+          const scheduler = document.getElementById('scheduler');
+          if (scheduler && typeof scheduler.scrollIntoView === 'function') {
+            scheduler.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        };
+        continueBtn && continueBtn.addEventListener('click', scrollToScheduler);
+      });
+    </script>
+  </body>
+  </html>
