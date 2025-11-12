@@ -1,7 +1,7 @@
 // Reusable Modal Form Component
 // Injects the wizard modal HTML, sets up the country dropdown,
 // step-by-step logic, validation, and form submission.
-const SUBMIT_ENDPOINT = 'https://thefreewebsitewizards.app.n8n.cloud/webhook/lead-intake';
+const SUBMIT_ENDPOINT = 'https://lead-intake.dylan-2f6.workers.dev/';
 
 (function () {
   const __tfwwInit = function () {
