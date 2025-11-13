@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Thank You</title>
-    <link rel="preconnect" href="https://assets.calendly.com" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -59,64 +58,11 @@
     <!-- Floating Particles Background -->
     <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
 
-    <!-- Booking Prompt Modal -->
-    <div id="bookingPrompt" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden">
-      <div class="w-full max-w-lg mx-4 bg-black border border-purple-500/40 rounded-2xl p-6 md:p-8 shadow-2xl">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white text-center mb-2">Almost finished!</h2>
-        <p class="text-base md:text-lg text-gray-200 text-center mb-6">To complete your application, Book a short Free Website Strategy Call</p>
-        <div class="flex items-center justify-center">
-          <button id="continueToBooking" class="px-5 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold shadow-lg hover:shadow-xl transition">Continue to Booking</button>
-        </div>
-      </div>
-    </div>
-
     <main class="relative z-10 max-w-6xl mx-auto px-6 py-12">
-      <!-- Scheduler Section -->
-      <section id="scheduler" class="bg-black magic-bg nebula-bg text-white rounded-2xl border border-purple-500/30 shadow-2xl p-6 md:p-10">
-        <div class="center mb-10">
-          <div class="mb-2">
-            <span class="inline-block text-xs md:text-sm font-semibold tracking-wide uppercase text-purple-300 bg-purple-600/10 border border-purple-500/30 rounded-full px-3 py-1">Almost finished!</span>
-          </div>
-          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">To complete your application, <span class="gradient-text">Book a Free Website Strategy Call</span></h1>
-          <p class="p max-w-2xl mx-auto">In just 15 minutes, we’ll map your website plan, answer questions, and get timelines moving right away.</p>
-        </div>
-
-        <!-- Value bullets -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
-            <i class="fas fa-rocket text-purple-400 mt-1"></i>
-            <div>
-              <p class="text-white font-semibold">Quick Launch Plan</p>
-              <p class="text-sm text-gray-300">Concrete next steps to get your free site live fast.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
-            <i class="fas fa-palette text-purple-400 mt-1"></i>
-            <div>
-              <p class="text-white font-semibold">Design Ideas</p>
-              <p class="text-sm text-gray-300">Themes and layouts tailored for your business.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 bg-black/40 border border-purple-500/20 rounded-lg p-4">
-            <i class="fas fa-chart-line text-purple-400 mt-1"></i>
-            <div>
-              <p class="text-white font-semibold">Growth Checklist</p>
-              <p class="text-sm text-gray-300">Simple actions to start attracting and converting visitors.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Calendly embed -->
-        <div class="relative rounded-2xl overflow-hidden border border-purple-500/40 shadow-2xl">
-          <div id="calendlyInline" class="calendly-inline-widget inline-widget"
-               data-url="https://calendly.com/dylan-thefreewebsitewizards/freewebsitestrategycall?hide_event_type_details=1&background_color=000000&text_color=ffffff&primary_color=9333ea"></div>
-        </div>
-
-        <p class="small center mt-6">If you don’t see the calendar, please check your connection.</p>
-      </section>
+      <!-- Final referral content only -->
 
       <!-- Referral Section -->
-      <section id="referral" class="hidden bg-black magic-bg nebula-bg text-white rounded-2xl border border-purple-500/30 shadow-2xl p-6 md:p-10">
+      <section id="referral" class="bg-black magic-bg nebula-bg text-white rounded-2xl border border-purple-500/30 shadow-2xl p-6 md:p-10">
         <div class="center mb-8">
           <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Thank you — You’re scheduled!</h2>
           <p class="p max-w-2xl mx-auto">You can also earn rewards by referring friends and businesses.</p>
@@ -234,56 +180,6 @@
         window.dataLayer.push({ event: 'ThankYouLoaded' });
       } catch (_) {}
 
-      // Load Calendly widget script
-      (function ensureCalendly() {
-        if (!document.getElementById('calendly-widget-js')) {
-          const s = document.createElement('script');
-          s.id = 'calendly-widget-js';
-          s.src = 'https://assets.calendly.com/assets/external/widget.js';
-          s.async = true;
-          document.head.appendChild(s);
-        }
-      })();
-
-      // Read lead details from query params (not shown, used only for tracking if needed)
-      const params = new URLSearchParams(window.location.search);
-      const name = params.get('name') || '';
-      const email = params.get('email') || '';
-      const phone = params.get('phone') || '';
-
-      // Listen for Calendly booking event and swap to referral section
-      window.addEventListener('message', (e) => {
-        try {
-          if (!e || !e.data || !e.data.event) return;
-          if (String(e.data.event) === 'calendly.event_scheduled') {
-            try {
-              window.dataLayer.push({ event: 'meeting_scheduled' });
-              window.dataLayer.push({ event: 'MeetingScheduled' });
-              // Meta Pixel: track appointment scheduling
-              if (window.fbq) {
-                try { fbq('track', 'Schedule', { content_name: 'Free Website Strategy Call' }); } catch (_) {}
-              }
-              // Google Analytics: custom event
-              if (typeof gtag === 'function') {
-                try { gtag('event', 'meeting_scheduled', { event_category: 'Calendly', event_label: 'Free Website Strategy Call' }); } catch (_) {}
-              }
-            } catch (_) {}
-            const schedulerEl = document.getElementById('scheduler');
-            const referralEl = document.getElementById('referral');
-            if (schedulerEl) schedulerEl.classList.add('hidden');
-            if (referralEl) {
-              referralEl.classList.remove('hidden');
-              // Scroll to referral section so page is not at the top
-              setTimeout(() => {
-                try { referralEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(_){}
-              }, 50);
-            }
-          }
-        } catch (err) {
-          console.warn('Calendly listener error:', err);
-        }
-      });
-
       // Particles from index.html
       function createStars() {
         const starsContainer = document.getElementById('stars-container');
@@ -321,21 +217,6 @@
       document.addEventListener('DOMContentLoaded', function() {
         createStars();
         createParticles();
-        // Show booking prompt modal on load and wire actions
-        const prompt = document.getElementById('bookingPrompt');
-        const continueBtn = document.getElementById('continueToBooking');
-        if (prompt) {
-          prompt.classList.remove('hidden');
-          setTimeout(() => { try { continueBtn && continueBtn.focus(); } catch(_){} }, 100);
-        }
-        const scrollToScheduler = () => {
-          try { prompt && prompt.classList.add('hidden'); } catch(_){}
-          const scheduler = document.getElementById('scheduler');
-          if (scheduler && typeof scheduler.scrollIntoView === 'function') {
-            scheduler.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        };
-        continueBtn && continueBtn.addEventListener('click', scrollToScheduler);
       });
     </script>
   </body>
