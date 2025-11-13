@@ -694,6 +694,6 @@ window.onApplyFormSuccess = (lead) => {
   if (lead?.name) params.set('name', lead.name);
   if (lead?.email) params.set('email', lead.email);
   if (lead?.phone) params.set('phone', lead.phone);
-  // Redirect to dedicated thank-you page with query params
-  window.location.href = `thank-you.html?${params.toString()}`;
+  // Redirect to dedicated scheduling page with query params
+  window.location.href = `freewebsitestrategycall.html?${params.toString()}`;
 };
