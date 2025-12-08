@@ -95,10 +95,12 @@
           </div>
         </div>
 
+        <!-- Note near the autofilled fields -->
+        <p class="small center mb-4">If this email is not correct, submit another application <a href="offer.html" class="text-purple-400 underline">here</a>.</p>
+
         <!-- Calendly embed -->
         <div class="relative rounded-2xl overflow-hidden border border-purple-500/40 shadow-2xl">
-          <div id="calendlyInline" class="calendly-inline-widget inline-widget"
-               data-url="https://calendly.com/dylan-thefreewebsitewizards/freewebsitestrategycall?hide_event_type_details=1&background_color=000000&text_color=ffffff&primary_color=9333ea"></div>
+          <div id="calendlyInline" class="inline-widget"></div>
         </div>
 
         <p class="small center mt-6">If you don’t see the calendar, please check your connection.</p>
@@ -127,12 +129,21 @@
 
       // Load Calendly widget script
       (function ensureCalendly() {
-        if (!document.getElementById('calendly-widget-js')) {
+        const existing = document.getElementById('calendly-widget-js');
+        if (!existing) {
           const s = document.createElement('script');
           s.id = 'calendly-widget-js';
           s.src = 'https://assets.calendly.com/assets/external/widget.js';
           s.async = true;
+          s.onload = initCalendlyWithPrefill;
           document.head.appendChild(s);
+        } else {
+          // If widget script already loaded, initialize immediately
+          if (window.Calendly) {
+            initCalendlyWithPrefill();
+          } else {
+            existing.addEventListener('load', initCalendlyWithPrefill);
+          }
         }
       })();
 
@@ -141,6 +152,23 @@
       const name = params.get('name') || '';
       const email = params.get('email') || '';
       const phone = params.get('phone') || '';
+
+      // Initialize Calendly with prefilled name/email based on URL params
+      function initCalendlyWithPrefill() {
+        try {
+          if (!window.Calendly || !document.getElementById('calendlyInline')) return;
+          Calendly.initInlineWidget({
+            url: 'https://calendly.com/dylan-thefreewebsitewizards/freewebsitestrategycall?hide_event_type_details=1&background_color=000000&text_color=ffffff&primary_color=9333ea',
+            parentElement: document.getElementById('calendlyInline'),
+            prefill: {
+              name: name || undefined,
+              email: email || undefined
+            }
+          });
+        } catch (err) {
+          console.warn('Calendly init error:', err);
+        }
+      }
 
       // Listen for Calendly booking event: track and redirect to thank-you
       window.addEventListener('message', (e) => {
@@ -218,6 +246,11 @@
           }
         };
         continueBtn && continueBtn.addEventListener('click', scrollToScheduler);
+
+        // Attempt initialization in case Calendly script is already present
+        if (window.Calendly) {
+          initCalendlyWithPrefill();
+        }
       });
     </script>
   </body>
