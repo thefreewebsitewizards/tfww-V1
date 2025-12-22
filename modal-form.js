@@ -71,6 +71,13 @@ const SUBMIT_ENDPOINT = 'https://lead-intake.dylan-2f6.workers.dev/lead-intake';
                       </div>
                       <input type="tel" id="phoneNumber" class="w-full" placeholder="123-456-7890">
                     </div>
+                    <div class="mt-3">
+                      <label for="smsConsent" class="text-gray-200 text-xs">
+                        <input type="checkbox" id="smsConsent" class="mr-2">
+                        I agree to receive text messages from The Free Website Wizards about my application, appointment scheduling, and follow-up. Reply STOP to opt out.
+                      </label>
+                      <p class="text-gray-400 text-[10px] mt-1">Message and data rates may apply.</p>
+                    </div>
                   </div>
 
                   <div class="step-content hidden" id="step5">
@@ -530,6 +537,20 @@ const SUBMIT_ENDPOINT = 'https://lead-intake.dylan-2f6.workers.dev/lead-intake';
           } else {
             if (emailInput) emailInput.style.borderColor = '#9333ea';
             if (emailError) emailError.classList.add('hidden');
+          }
+        }
+
+        if (currentStepIndex === 4) {
+          const phoneInput = document.getElementById('phoneNumber');
+          const consentCheckbox = document.getElementById('smsConsent');
+          const phone = (phoneInput?.value || '').trim();
+          if (!phone || !consentCheckbox?.checked) {
+            if (phoneInput) phoneInput.style.borderColor = '#ef4444';
+            showSubmissionError('Please enter your phone number and agree to receive texts to continue.');
+            return;
+          } else {
+            if (phoneInput) phoneInput.style.borderColor = '#9333ea';
+            formErrorDisplay.style.display = 'none';
           }
         }
 
