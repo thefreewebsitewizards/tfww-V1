@@ -209,6 +209,16 @@
     transform: translateX(-50px);
 }
 
+/* SMS Disclosure styling */
+.sms-disclosure {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
 .slide-in-left.visible {
     transform: translateX(0);
 }

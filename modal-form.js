@@ -74,9 +74,9 @@ const SUBMIT_ENDPOINT = 'https://lead-intake.dylan-2f6.workers.dev/lead-intake';
                     <div class="mt-3">
                       <label for="smsConsent" class="text-gray-200 text-xs">
                         <input type="checkbox" id="smsConsent" class="mr-2">
-                        I agree to receive text messages from The Free Website Wizards about my application, appointment scheduling, and follow-up. Reply STOP to opt out.
+                        I agree to receive text messages from The Free Website Wizards about my application, appointment scheduling, and follow up messages. Message frequency varies. Message and data rates may apply. Consent is not a condition of purchase. Reply STOP to opt out, HELP for help.
                       </label>
-                      <p class="text-gray-400 text-[10px] mt-1">Message and data rates may apply.</p>
+                  
                     </div>
                   </div>
 
